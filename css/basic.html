@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!-- 사용위치 2. head에 style 태그로 사용 -->
+    <style>
+        /* 
+            <선택자>(우선 순위)(빈도 수)
+                - 태그 선택자(1)(2)
+                - 클래스 선택자(3)(1), 주고싶은 곳에 주면 된다, 같은 클래스값 사용 O
+                - 아이디 선택자(2)(3), 유니크해야함, 한 문서에서 같은 아이디값 사용 X
+        */
+
+        /*태그 선택자*/
+        div { color: plum; }
+
+        /*클래스 선택자*/
+        .cls1 { font-weight: bold; color: powderblue;}
+
+        /*아이디 선택자*/
+        #hello { color: seagreen; }
+    </style>
+
+    <!-- 사용위치 3. 새로운 css 파일 생성 해서 link-->
+    <link rel="stylesheet" href="basic.css">
+</head>
+<body>
+    <!-- CSS 사용 위치 -->    
+    <!-- 사요위치 1. 태그에 사용(디테일) -->
+    <h1 style="font-size: 10px; font-weight: normal;">안녕하세요.</h1>
+    <div class="cls2">Hi~~~~
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <div id="hello">안녕하세요.</div>
+    <div style="color: red;" class="cls1">저의 이름은.</div>
+    <div class="cls1">홍길동 입니다.</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+        <input type="text" id="uid" name="uid">
+        <input type="button" id="btn" value="알람 띄우기" >
+
+
+    </div>
+
+    <script>
+        var inputUid = document.getElementById('uid');//안쓸예정(한개)
+        document.getElementsByClassName('cls');//안쓸예정(배열)
+        inputUid.value = '반가워';
+        console.log(inputUid);//Java 의 System.out.println 과 유사
+
+        function clkBtn() {
+            alert(inputUid.value);
+        }
+        
+        var btn = document.querySelector('#btn');//한개
+        btnArr = document.querySelectorAll('');//배열(여러개)
+
+        //(. class), (# id),(  tag)
+        if(btn) {
+            btn.addEventListener('click', clkBtn);//연결(호출아님), 여러개의 이벤트 추가 가능
+            btn.onclick = function() {
+                console.log('ddd');//콘솔에 찍기
+            }
+        }
+
+    </script>
+</body>
+</html>

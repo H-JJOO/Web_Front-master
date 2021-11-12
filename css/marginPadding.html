@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin & Padding</title>
+    <style>
+        .bc {background-color: brown;}
+        .cls1 { padding-bottom: 20px;}
+        .cls2 { margin-bottom: 20px;}
+
+
+        /*
+        사용방법 3가지
+        padding :
+        margin : 
+
+        값 4개 사용 : 상 우 하 좌
+        */
+
+        /*상 우 하 좌*/
+        .p1 {
+            border: 1px solid black;
+            width: 100px; height: 100px;
+            padding: 30px 10px 10px 30px;
+        }
+        /*상 좌우 하*/
+        .p2 {
+            width: 100px; height: 100px;
+            padding: 10px 10px 50px;
+        }
+
+        /*상하 좌우*/
+        .p3 {
+            width: 100px; height: 100px;
+            padding: 20px 50px;
+        }
+
+        /*전체*/
+        .p4 {
+            width: 100px; height: 100px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="bc cls1">ABC</div>
+    <div>가나다</div>
+    <hr>
+    <div class="bc cls2">ABC</div>
+    <div>가나다</div>
+    <hr>
+    <div class="bc p1">패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩</div>
+    <hr>
+    <div class="bc p2">패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩</div>
+    <hr>
+    <div class="bc p3">패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩</div>
+    <hr>
+    <div class="bc p4">패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩패딩</div>
+
+</body>
+</html>

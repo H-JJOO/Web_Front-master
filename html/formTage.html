@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 태그</title>
+</head>
+<body>
+    <h1>form 태그</h1>    
+    <hr>
+    <!--
+        action : 주소값 (form 태그 안에 작성된 내용을 들고 갈 목표 주소값)
+        method : get, post (대부분 post)
+        -->
+    <form action="/join" method="get">
+        <div>아이디 : <input type="text" name="uid"></div>
+        <div>
+            <label>비밀번호 : <input type="password" name="upw"></label>
+        </div>
+        <div>
+            <input type="text" name="unm" placeholder="이름">
+        </div>
+        <!--checkbox : 체크박스-->
+        <div>
+            <!--input 은 닫을 필요 없다-->
+            <label>농구 : <input type="checkbox" name="hobbit" value="1"></label>
+            <label>축구 : <input type="checkbox" name="hobbit" value="2"></label>
+            <label>배구 : <input type="checkbox" name="hobbit" value="3"></label>
+        </div>
+        <div>
+            나의 소개 : <textarea name="status"></textarea>
+        </div>
+        <!--select option : 선택바, name 이 키값, value 가 벨류값-->
+        <div>
+            지역 : 
+            <select name="sido">
+                <option value="1">서울시</option>
+                <option value="2">부산시</option>
+                <option value="3">대구시</option>
+                
+            </select>
+        </div>
+        <!--hidden : 화면엔 나오지 않고, 벨류값이 날아감-->
+        <div>
+            <input type="hidden" name="secret" value="10">
+        </div>
+        <div>
+            <!--밑의 속성은 전부 form 태그 안에 있어야 기능이 유효하다-->
+            <input type="submit" value="전송1"><!--쓰고싶을때-->
+            <input type="button" value="전송2"><!--안쓰고싶을때-->
+            <button>전송3</button>
+            <button type="button">전송4</button>
+            <input type="reset" value="초기화">
+        </div>
+        <div>
+            <!--radio : 여러 값중에 하나만 선택할 경우 사용, name 이 같아야함-->
+            <label>여성:<input type="radio" name="gender" value="f" checked></label>
+            <label>남성:<input type="radio" name="gender" value="m"></label>
+        </div>
+    </form>
+
+
+    <a href="/list?name=값&age=값">이동</a>
+
+</body>
+</html>

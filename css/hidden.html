@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden</title>
+    <style>
+        /*안보이지만 공간을 차지하고 있냐 없냐 차이*/
+    
+        div { width: 100px; height: 100px; background-color: red;}
+        /*공간차지 하는데 안보임*/
+        #visi { visibility: hidden; }
+
+        /*공간차지 안하고 안보임*/
+        #dis { display: none; }
+
+        /*주로 애니메이션 때 사용, 투명도 0~1.0*/
+        #opa { opacity: 0.5;}
+
+    </style>
+</head>
+<body>
+    <!-- 엘리먼트 숨기는 방법 3가지 -->
+    <div></div>
+    <div id="opa"></div>
+    <div></div>
+    
+    
+</body>
+</html>
