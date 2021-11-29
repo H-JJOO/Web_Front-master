@@ -1,111 +1,118 @@
-
 html {
-    scroll-behavior: smooth;    
-  }
+    scroll-behavior: smooth;
+}
 
 html, body {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
-  
-  li {
-    position: relative;
-  }
 
-  a {
+ul {
+    padding: 40px;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap : 20px
+}
+
+a {
     background-color: goldenrod;
     border-radius: 10px;
     color: white;
     display: inline-block;
     text-decoration: none;
     text-align: center;
+}
+
+li {
+    position: relative;
+    border: 1px solid #acacac2f;
+    border-radius: 10px;
+}
+
+
+
+a:hover {
+    opacity: 0.6;
+}
+
+section > .hero {
     
-  }
-  
-  a:hover {
-    opacity: .6;
-  }
-  
-  .hero {
-    padding: 40px 10px 20px 10px;
+}
+
+.hero {
+    padding: 20px 10px 20px 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     align-items: center;
-  }
-  
-  .hero {
+}
+
+.hero > h1 {
     color: white;
-  }
-  
-  .hero > h1 {
-    font-size: 50px;
-    padding-bottom: 30px;
-  }
-  
-  .hero > article > p {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.hero > article {
+    color: white;
+    font-weight: 100;
+    
+}
+
+
+.hero > article > p {
     font-size: 20px;
     font-weight: 100;
-  }
-  
-  .hero > article > a {
+}
+
+.hero > article > a {
     padding: 10px;
     margin-top: 10px;
-  }
-  
-  .breweries > ul {
-    padding: 40px;
-    margin: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap : 20px
-    
-    
-  }
-  
-  .breweries > ul > li {
-    border: 1px solid #acacac2f;
+}
+
+.breweries > ul > li {
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-  }
-  
-  .breweries > ul > li > figure {
+}
+
+.breweries > ul > li > figure {
     max-height: 220px;
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
   }
-  
-  .breweries > ul > li > figure > img {
+
+.breweries > ul > li > figure > img {
     width: 100%;
-  }
-  
-  .breweries > ul > li > figure > figcaption {
+}
+
+.breweries > ul > li > figure > figcaption {
     position: absolute;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-  }
-  
-  .breweries > ul > li > figure > figcaption > h3 {
+}
+
+.breweries > ul > li > figure > figcaption > h3 {
     color: white;
     padding: 10px;
     font-size: 20px;
-  }
-  
-  .breweries > ul > li > p {
+}
+
+.breweries > ul > li > p {
     font-size: 18px;
     padding: 10px;
     color: black;
     position: relative;
-  }
-  
-  .breweries > ul > li > a {
+}
+
+.breweries > ul > li >a {
     padding: 10px;
     margin: 10px;
+}
 
-  }
-
-  footer {
+footer {
     background-color: black;
     color: white;
     position: fixed;

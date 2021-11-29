@@ -1,0 +1,66 @@
+html {scroll-behavior: smooth;}
+
+html, body {padding: 0; margin: 0;}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    text-align: center;    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: goldenrod;
+}
+
+.wrapper {padding-bottom: 64px;}
+
+.hero {
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-content: center;
+}
+
+.breweries {
+    padding: 20px;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap :16px;
+    list-style: none;
+}
+
+ul > li {
+    border: 1px solid #e2e2e2;
+    border-radius: 20px;
+}
+
+ul > li > figure {
+    position: relative;
+}
+
+ul > li > figure > img {
+    width: 100%;
+}
+
+ul > li > figure > figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+}
+
+ul > li > figure > figcaption > h3 {
+    color: #fff;
+}
+
+
+
+
