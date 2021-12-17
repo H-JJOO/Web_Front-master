@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //호이스팅은 변수 선언만 위로 올라가고 값은 올라가지 않는다.
+        /*
+            var 변수와 function 은 호이스팅 현상이 일어난다.
+            즉, 인접 스코프 시작 지점으로 옮겨준다.. (변수 선언만, 홍길동은 불가능하고, sum 함수 내부의 값들은 같이 올라간다)
+        */
+
+        /*
+            //호이스팅 문제에서 벗어나는법//
+            변수 선언, 함수 선언은 무조건 최상위
+            변수명, 함수명은 같은 이름을 쓰지 않는다.
+        */
+        var myName;
+        function sum() {
+            var ddd;
+            console.log('sum' + ddd);
+            var ddd = 'aaa';
+        }
+
+        sum();
+        
+        console.log(myName);
+        var myName = '홍길동';
+        function sum() {
+            console.log('sum');
+        }
+
+        console.log(ddd);//맨위로 올라가는게 아니라 스코프 맨위로 가는것이기때문에 에러
+    </script>
+</body>
+</html>

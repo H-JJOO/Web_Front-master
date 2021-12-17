@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열, 유사배열
+        //이건 배열
+        var arr = [2, 6, 10, 11, 22, 1, 7];
+        var sum2 = 0;
+        for(var i = 0; i < arr.length; i++) {
+            console.log(i + ':' + arr[i]);
+            sum2 += arr[i];
+        }
+        console.log('sum2 : ' + sum2);
+
+        //콜백함수
+        //function 자체가 일급객체
+        function aa(val) {
+            console.log(val);
+            sum += val;
+        }
+
+        console.log('-----------------');
+
+        var sum = 0;
+        //함수를 통해서 순차적으로 하나하나씩 호출
+        arr.forEach(aa);
+        console.log('sum : ' + sum);
+    </script>
+</body>
+</html>

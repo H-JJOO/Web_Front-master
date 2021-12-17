@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체생성 방법2
+        var h1 = {
+            'name' : '홍길동',
+            'age' : 12,
+            'showMe' : function() {
+                console.log('My name is ' + this.name + ', age is ' + this.age);
+            }
+        };
+
+        var h2 = {
+            'name' : '가나다',
+            'age i' : 14,//빈칸도 되기는하는데 왠만함 쓰지말자
+            'showMe' : function() {
+                console.log('My name is ' + this.name + ', age is ' + this['age i']);
+            }
+        };
+
+        h1.showMe();
+        h2.name = '우주선';//h2.name 바뀜
+        h2.showMe();
+
+    </script>
+</body>
+</html>

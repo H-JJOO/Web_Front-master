@@ -8,15 +8,31 @@
 </head>
 <body>
     <script>
+        // 호이스팅 : 변수, 함수는 위치를 가장 위로 올려준다.
+
         function sum() {
-            console.log('len : ' + arguments.length);
-            console.log(arguments[0]);
-            console.log(arguments[1]);
-            console.log(arguments[2]);
-            console.log(arguments[3]);
+            var sum = 0;
+            for(var i = 0; i < arguments.length; i++ ) {
+                sum += arguments[i];
+            }
+            console.log('sum : ' + sum)
+            // console.log('len : ' + arguments.length);
+            // console.log(arguments[0]);
+            // console.log(arguments[1]);
+            // console.log(arguments[2]);
+            // console.log(arguments[3]);
             
         }
-        sum(10, 20, 30, 40, 50);
+
+        function sum() {//덮어 쓰기 된다
+            console.log('aaa');
+        }
+
+        sum(10, 20, 30); // > sum : 60
+        sum(100, 200, 300, 400, 500); // > sum : 1500
+
+        
+        
         
     </script>
 </body>

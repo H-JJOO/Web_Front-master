@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS, true/false 를 사용할 수 있는 값들을 알려주는 예제
+        // false : 0, '', undefined, null
+        // true : 위에꺼 반대
+        // and, or 차이점 (모든 프로그래밍 언어 동일)
+        function ck1() {//true
+            console.log('--ck1 called--');
+            return 1;
+        }
+
+        function ck2() {//false
+            console.log('--ck2 called--');
+            return '';
+        }
+
+        function ck3() {//false
+            console.log('--ck3 called--');
+        }
+
+        if (ck1() || ck2() && ck3()) {// || 는 앞에 true 만나면 뒤에 실행조차 하지 않음
+            console.log('Wow!! 첫번째');
+        }
+
+        if (ck2() && ck1()) {// && 앞에 false 면 뒤에 실행조차 하지 않음
+            console.log('Wow!! 두번째');
+        }
+
+        var arr = [];//true
+        if(arr) {
+            console.log('dddd');
+        }
+    </script>
+</body>
+</html>

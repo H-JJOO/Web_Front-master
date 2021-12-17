@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js, prototype형 객체지향
+        //보통 객체지향 언어는 class기반
+
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+        
+            this.showMe = function() {
+                console.log('My name is' + this.name + ', age is ' + this.age);
+            }
+        }
+        //이건 몰라도 된다
+        Human.prototype.hello = function() {
+            console.log('나는 ' + this.name + "이야 반가워~~");
+        }
+
+        //객체 만들어지면 별개, 객체생성 방법1
+        var h1 = new Human('홍길동', 12);
+        var h2 = new Human('가나다', 14);
+        h1.showMe();
+        h1.height = 100;
+
+        h2.name = '우주선';//은닉화 불가능
+
+        console.log(h1.height);
+        console.log(h2.height);
+        console.log(h2.name);
+        console.log(h2.age);
+        
+        //이건 몰라도 되는데, 대충 이해만
+        h1.hello();
+
+    </script>
+</body>
+</html>
