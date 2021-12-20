@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        //js 에는 숫자가 전부 실수로 
         var num1 = 10;//타입을 추측
         var num2 = 20;
         console.log(num1 + num2);
@@ -16,15 +17,18 @@
         var result = num1 + num2 + num3;//30정수 + 40문자열 = 30문자열 = 40문자열 = 3040
         console.log(result);
 
-        var result2 = num1 + num2 + parseInt(num3);
+        var result2 = num1 + num2 + parseInt(num3);//문자열 -> 숫자
         console.log(result2);
 
-        var result3 = num1 + num2 + Number(num3);
+        var result3 = num1 + num2 + Number(num3);//문자열 -> 숫자
         console.log(result3);
 
         console.log('parseInt("123a456") : ' + parseInt("123,456"));//왼쪽부터 한땀한땀 숫자로 바꿔주는데, 문자나오면 멈춤
-        console.log('Number("123a456") : ' + Number("123,456"));
+        console.log('Number("123a456") : ' + Number("123,456"));//섞여있으면 NaN, 이게더 안정적
 
+        console.log(num1 + '');
+        console.log(typeof(String(num1)));
+        
 
     </script>
 </body>

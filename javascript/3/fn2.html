@@ -8,17 +8,18 @@
 </head>
 <body>
     <script>
-        function sum(n1 = 1, n2 = 2, n3 = 3, n4 = 4) {
+        //오버로딩 개념 없음, 바로 덮여쓰기 된다.
+        function sum(n1 = 1, n2 = 2, n3 = 3, n4 = 4) {//파라미터에 적는 값 만큼 받을수 있다.
             console.log(n1 + n2 + n3 + n4);
         }
         sum();
-        sum(10);
+        sum(10);//ES6 문법임
         sum(10, 20);
         sum(10, 20, 30);
         sum(10, 20, 30, 40);
         sum(10, 20, 30, 40, 50);//보낸값 이상으로 더해주면 더해준건 쌩깜
 
-        function multi(n1 = null, n2 = 1, n3 = 2) {//혹시 비워놓으면 NaN 뜬다, Null 주면 0 취급
+        function multi(n1 = null, n2 = 1, n3 = 2) {//혹시 비워놓으면 NaN 뜬다, Null 주면 0 취급(NaN 안뜨게)
             console.log(n1 * n2 * n3);
         }
         multi();

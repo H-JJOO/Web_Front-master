@@ -15,16 +15,19 @@
             console.log('fn2 : ' + item);
         }
         
+        //정의 (make)
         function proc(cb, max) {
             for(var i=0; i<max; i++) {
                 cb(i); 
             }
         }
+
+        //호출 (use)
         proc(function(item) {
             console.log('noName : ' + item);
         }, 10);
         
-
+        proc(fn2, 5);
     </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //팬딩, 대기상태
+        var num =9;
+        var pro = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                if(num >= 10) {
+                console.log('-- resolve -- ');
+                var obj = {
+                    n1: 10,
+                    n2: 20
+                }
+                resolve(obj);//호출되면, then에 주입된 함수 호출, resolve(?) 매개변수로는 한개의 값밖에 못들어간다, 여러개 넣고 싶으면 객체생성해서 넣어야한다.
+            } else {
+                console.log('-- reject -- ');
+                reject(new Error ('에러 발생'));//호출되면, catch에 주입된 함수 호출 //new Error 이게 정석이랍니다.
+            }
+            }, 10000)
+        });
+
+        //promis 사용 방법
+
+        pro.then(function(res) {
+            console.log(' then called');
+            console.log('res : ' + res);//undefined, resolve 보낼때 아무것도 안보내서
+            console.log('n1 : ' + res.n1);
+            console.log('n2 : ' + res.n2);
+            
+        }).catch(function(err){
+            console.log(' catch called');
+            console.log('err : ' + err );//undefiend, reject 보낼때 아무것도 안보내서
+        });
+    </script>
+</body>
+</html>

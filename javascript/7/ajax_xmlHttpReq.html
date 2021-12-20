@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData();">자료 가져오기</button>
+    <div id="container"></div>
+    <script>
+        //Ajax 통신
+        function getData() {
+            var http = new XMLHttpRequest();//http 객체 생성
+            var url = 'https://picsum.photos/v2/list';
+            http.open('get', url);//날리는 방식 GET 방식으로 연결, 쏘기 직전
+            http.onreadystatechange = function(e) {//멤버필드에 메소드 연결, state(상태)가 바뀔때마다
+                if(e.target.readyState === XMLHttpRequest.DONE) {//통신이 완료 되었다면, DONE(4) // 상태
+                    var status = e.target.status;//상황
+                    if(status === 200) {//통신 성공
+                        var list = JSON.parse(http.response);
+                        setData(list);//응답해서 준 자료룰 setData에 보내준다.
+                    } else {//통신 실패
+                        alert('통신 실패!!!');
+                    }
+                }
+            }
+            http.send();//쏨
+        }
+
+        function setData(list) {
+            var containerElem = document.querySelector('#container');
+            var imgUrl = 'https://picsum.photos/id/';
+            list.forEach(function(item) {
+                var width = parseInt(item.width * 0.1);
+                var height = parseInt( item.height * 0.1);
+                var id = item.id;
+
+                var imgElem = document.createElement('img');//div, span 이런 tag 들 추가
+                imgElem.src = imgUrl + id + '/' + width + '/' + height;
+
+                containerElem.appendChild(imgElem);//append 는 add 라 보면 된다. (뒤쪽에), 기존에 있는게 날아가지 않는다.
+            });
+        } 
+    </script>
+</body>
+</html>

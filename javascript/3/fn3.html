@@ -8,7 +8,8 @@
 </head>
 <body>
     <script>
-        // 호이스팅 : 변수, 함수는 위치를 가장 위로 올려준다.
+        //함수 선언 무조건 위쪽에 해 주는게 좋다.
+        // 호이스팅 : 변수, 함수는 위치를 가장 위로 올려준다.(인접한 스코프 안에서)
 
         function sum() {
             var sum = 0;
@@ -31,7 +32,23 @@
         sum(10, 20, 30); // > sum : 60
         sum(100, 200, 300, 400, 500); // > sum : 1500
 
-        
+        const sum2 = () => {
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log('sum : ' + sum);
+        }
+
+        var sum3 = function(n1, n2) {
+            return n1 + n2;
+        }
+
+        //축약형
+
+        var sum3_1 = (n1, n2) => n1 + n2;//retrun 없어야 가능
+
+        var sum3_2 = n1 => n1 * 2;//가능은한데, () 는 해주는게 좋겠다. 
         
         
     </script>

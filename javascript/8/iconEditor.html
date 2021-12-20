@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        //쉽게 개체 생성할때 좋음
+        function elt(name, attr) {
+            var node = document.createElement(name);
+            if(attr) {
+                for(var item in attr) {//가지고있는 개체의 속성값을 가져온다. 배열이였을때는 배열 값을 준다.
+                    if(attr.hasOwnProperty(item)) {//원래 가지고 있는 속성인가? 커스텀한거라면 false 뜬다.
+                        node.setAttribute(item, attr[item]);
+                    }
+                }
+            }
+            return node;
+        }
+        
+        function createIconEditor(parent, nx, ny) {
+            //color 선택
+            var color = elt('input', {type : 'color'} );//속성명 : '속성값'
+
+            //모두 삭제 버튼
+            var clear = elt('input', {type : 'button', value: '모두 삭제'});
+            clear.addEventListener('click', function() {
+                cells.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                });
+            })
+            
+            var table = elt('table');
+            table.style.boarderCollapse = 'collapse';
+            table.style.marginTop = '5px';
+
+            var cells = [];
+            for(var r = 0; r < ny; r++) {
+                var tr = elt('tr');
+                table.appendChild(tr);
+
+                for(var c = 0; c < nx; c++) {
+                    var td = elt('td');
+                    cells.push(td);
+                    tr.appendChild(td);
+                    td.style.width = td.style.height = '15px';
+                    td.style.border = '1px solid gray';
+                    td.addEventListener('click', function(e) {
+                        if(e.target.style.backgroundColor === '') {
+                            e.target.style.backgroundColor = color.value
+                        } else {
+                            e.target.style.backgroundColor = '';
+                        }
+                    });
+                }
+            }
+
+            parent.appendChild(color);
+            parent.appendChild(clear);
+            parent.appendChild(table);
+            
+        }
+        createIconEditor(document.body, 15, 15);
+    </script>
+</body>
+</html>
