@@ -9,12 +9,12 @@
 </head>
 <body>
     <script>
-        //쉽게 개체 생성할때 좋음
+        //쉽게 태그 개체 생성할때 좋음
         function elt(name, attr) {
             var node = document.createElement(name);
             if(attr) {
-                for(var item in attr) {//가지고있는 개체의 속성값을 가져온다. 배열이였을때는 배열 값을 준다.
-                    if(attr.hasOwnProperty(item)) {//원래 가지고 있는 속성인가? 커스텀한거라면 false 뜬다.
+                for(var item in attr) {//가지고있는 개체의 속성값을 가져온다(멤버필드). 배열이였을때는 배열 값을 준다.
+                    if(attr.hasOwnProperty(item)) {//원래 가지고 있는 속성인가? 커스텀한거라면 false 뜬다.//배열이라면 작동 안하게
                         node.setAttribute(item, attr[item]);
                     }
                 }
@@ -63,7 +63,8 @@
             parent.appendChild(clear);
             parent.appendChild(table);
             
-        }
+
+        }    
         createIconEditor(document.body, 15, 15);
     </script>
 </body>

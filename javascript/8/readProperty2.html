@@ -17,13 +17,27 @@
         var result = [];
         var fm = document.querySelector('#favorite');
         var list = fm.children;//TAG 들만 자식으로 가져옴
-        console.log(list);
+        console.log(fm.nodeName);
         for(var i = 0; i < list.length; i++) {
             if(list[i].nodeName === 'INPUT' && list[i].type === 'checkbox') {//nodeName Tag 이름
                 result.push(list[i].getAttribute('value'));//getAttribute 속성값 'value' 의 값이 넘어온다, pome, dalma, bool
             }
         }
         console.log(result.join(', '));
+
+//뭔가 잘못 되었다 
+
+    function chk() {
+        var checkedlist = [];
+        var checkboxList = fm.querySelectorAll('input[type=checkbox][name=dog]');
+        for(var i = 0; i < checkboxList.length; i++) {
+            if(checkboxList[i].checked) {
+                checkedList.push(checkboxList[i].value);
+            }
+        }
+        console.log(checkedlist.join(', '));
+    }
+        
     </script>
 </body>
 </html>
