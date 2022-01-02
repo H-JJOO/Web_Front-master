@@ -1,0 +1,23 @@
+html, body { margin: 0; padding: 0;}
+
+* {
+    box-sizing: border-box;
+}
+
+body {display: grid; grid-template-rows: 120px 1fr 100px ; min-height: 100vh;}
+
+header {background-color: #1abc9c; font-weight: 900; font-size: 50px; display: flex; align-items: center;}
+
+section {scroll-behavior: auto;}
+
+section > table {
+    border: 1px solid black; 
+    border-collapse: collapse;
+    text-align: center;
+}
+
+section > table > tr, th, td { border: 1px solid black;}
+
+img {float: right;}
+
+footer { background-color: #3498db; color: #fff; display: flex; justify-content: center; align-items: center;}
