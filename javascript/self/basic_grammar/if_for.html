@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문&반복문</title>
+    <style>
+        .color {color:  #000;}
+        table, td {
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+        .pointer::after {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let memNum = prompt('입장객은 몇 명인가요?');
+        let colNum = prompt('한 줄에 몇 명씩 앉습니까?');
+
+        if(memNum % colNum === 0) {
+            rowNum = parseInt(memNum / colNum);
+        } else {
+            rowNum = parseInt(memNum / colNum) + 1;
+        }
+        document.write('모두 ' + rowNum + ' 개의 줄이 필요합니다.'+ '<br>' + '<br>');
+
+
+        let i, j;
+        
+        // for(i = 0; i < rowNum; i++) {
+        //     for(j = 1; j <= colNum; j++) {
+        //         seatNo = i * colNum + j;//좌석번호
+        //         if(seatNo > memNum) break;
+        //         document.write('좌석' + seatNo + ' ');
+        //     }
+        //     document.write('<br>');
+        // }
+
+        document.write('<table>');
+        for(let i = 0; i < rowNum; i++) {
+            for(let j = 1; j <= colNum; j++) {
+                seatNo = i * colNum + j;
+                if(seatNo > memNum) break;
+                document.write('<td class="pointer" id="seatCheck"> 좌석 ' + seatNo + ' </td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>')
+
+        const seatCheckElem = document.querySelector('#seatCheck');
+        seatCheckElem.addEventListener('click', () => {
+            Element.classlist.add('color');
+        })
+    </script>
+</body>
+</html>
